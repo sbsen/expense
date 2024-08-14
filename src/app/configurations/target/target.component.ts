@@ -2,7 +2,7 @@ import { Component, Inject, Input, OnInit, Signal, computed, inject } from "@ang
 import { CommonModule, DatePipe } from "@angular/common";
 import { MatCardModule } from "@angular/material/card";
 import { ConfigurationsService } from "../../core/services/configurations.service";
-import { LocationModel } from "../../core/models/location.model";
+import { Location } from "../../core/models/location.model";
 import { MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef } from "@angular/material/dialog";
 import { AddDialogComponent } from "../location/add-dialog";
 import { EditDialogComponent } from "../location/edit-dialog";
@@ -39,28 +39,28 @@ export class EditTargetDialogComponent implements OnInit {
   ngOnInit(): void { }
   
   editLocation() { 
-    if(this.data.id === '') 
-       this.service.addTarget(this.data).then((id) => {
-        this.data.id = id;
-        this._snackBar.open('Success', 'Close', {
-          duration: 2000
-        });;
-      }).catch(() => {
-        this._snackBar.open('Error', 'Close', {
-          duration: 2000
-        });;
-      });
-    else
-      this.service.editTarget(this.data).then(() => {
-        this._snackBar.open('Success', 'Close', {
-          duration: 2000
-        });;
-      }).catch(() => {
-        this._snackBar.open('Error', 'Close', {
-          duration: 2000
-        });;
-      });
-  }
+  //   if(this.data.id === '') 
+  //      this.service.addTarget(this.data).then((id) => {
+  //       this.data.id = id;
+  //       this._snackBar.open('Success', 'Close', {
+  //         duration: 2000
+  //       });;
+  //     }).catch(() => {
+  //       this._snackBar.open('Error', 'Close', {
+  //         duration: 2000
+  //       });;
+  //     });
+  //   else
+  //     this.service.editTarget(this.data).then(() => {
+  //       this._snackBar.open('Success', 'Close', {
+  //         duration: 2000
+  //       });;
+  //     }).catch(() => {
+  //       this._snackBar.open('Error', 'Close', {
+  //         duration: 2000
+  //       });;
+  //     });
+ }
 
 }
 
